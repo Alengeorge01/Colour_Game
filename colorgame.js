@@ -7,6 +7,7 @@ var messageDisplay = document.querySelector("#message");
 var reset=document.querySelector("#reset");
 var h1 = document.querySelector("h1");
 var h2 = document.querySelector("h2");
+var colour_select = document.querySelector("#color_select");
 var modeButton =document.querySelectorAll(".modeb");
 
 init();
@@ -36,6 +37,7 @@ function setupsquare(){
 		squares[i].addEventListener("click", function() {
 
 			var clickedColor = this.style.backgroundColor;
+			var select = this.colour_select;
 			if(clickedColor === pickedColor) {
 				messageDisplay.textContent = "Correct !!";
 				reset.textContent="Play_Again";
