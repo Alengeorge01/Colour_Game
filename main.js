@@ -5,5 +5,9 @@ function init(){
 	
 	setupbuttons();
 	setupsquare();
-	resetf();
+	resetColor();
+}
+
+function reset(){
+	resetColor();
 }

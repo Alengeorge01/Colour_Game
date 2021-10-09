@@ -4,7 +4,7 @@ var pickedColor;
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
-var reset=document.querySelector("#reset");
+var resetColor=document.querySelector("#resetColor");
 var h1 = document.querySelector("h1");
 var h2 = document.querySelector("h2");
 var colour_select = document.querySelector("#color_select");
@@ -16,7 +16,7 @@ function init(){
 	
 	setupbuttons();
 	setupsquare();
-	reset();
+	resetColor();
 }
 
 function setupbuttons(){
@@ -26,7 +26,7 @@ function setupbuttons(){
 			modeButton[1].classList.remove("selected");
 			this.classList.add("selected");	
 			this.textContent === "Easy" ?	numSquares = 3 : numSquares = 6;
-			reset();
+			resetColor();
 		});
 	}
 }
@@ -38,7 +38,7 @@ function createbuttons(){
 			modeButton[1].classList.remove("selected");
 			this.classList.add("selected");	
 			this.textContent === "Easy" ?	numSquares = 3 : numSquares = 6;
-			reset();
+			resetColor();
 		});
 	}
 }
@@ -52,7 +52,7 @@ function setupsquare(){
 			var select = this.colour_select;
 			if(clickedColor === pickedColor) {
 				messageDisplay.textContent = "Correct !!";
-				reset.textContent="Play_Again";
+				resetColor.textContent="Play_Again";
 				changeColors(clickedColor);
 				h1.style.backgroundColor = clickedColor;
 				h2.style.backgroundColor = clickedColor;
@@ -65,11 +65,11 @@ function setupsquare(){
 	}
 }
 
-function reset(){
+function resetColor(){
 	colors=generateRandomColors(numSquares);
 	pickedColor=pickColor();
 	colorDisplay.textContent=pickedColor;
-	reset.textContent="New Colours";
+	resetColor.textContent="New Colours";
 	messageDisplay.textContent = "";
 	for(var i = 0; i < squares.length; i++){
 		if(colors[i]){
@@ -85,8 +85,8 @@ function reset(){
 
 }
 
-reset.addEventListener("click", function(){
-	reset();
+resetColor.addEventListener("click", function(){
+	resetColor();
 });
 
 function changeColors(color) {
