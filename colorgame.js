@@ -16,7 +16,7 @@ function init(){
 	
 	setupbuttons();
 	setupsquare();
-	resetf();
+	reset();
 }
 
 function setupbuttons(){
@@ -26,7 +26,19 @@ function setupbuttons(){
 			modeButton[1].classList.remove("selected");
 			this.classList.add("selected");	
 			this.textContent === "Easy" ?	numSquares = 3 : numSquares = 6;
-			resetf();
+			reset();
+		});
+	}
+}
+
+function createbuttons(){
+	for(var i = 0; i < modeButton.length; i++) {
+		modeButton[i].addEventListener("click", function() {
+			modeButton[0].classList.remove("selected");
+			modeButton[1].classList.remove("selected");
+			this.classList.add("selected");	
+			this.textContent === "Easy" ?	numSquares = 3 : numSquares = 6;
+			reset();
 		});
 	}
 }
@@ -53,7 +65,7 @@ function setupsquare(){
 	}
 }
 
-function resetf(){
+function reset(){
 	colors=generateRandomColors(numSquares);
 	pickedColor=pickColor();
 	colorDisplay.textContent=pickedColor;
@@ -74,7 +86,7 @@ function resetf(){
 }
 
 reset.addEventListener("click", function(){
-	resetf();
+	reset();
 });
 
 function changeColors(color) {
