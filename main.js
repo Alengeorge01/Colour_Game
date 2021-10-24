@@ -7,3 +7,11 @@ function init(){
 	setupsquare();
 	resetf();
 }
+
+function error(){
+	log.error();
+}
+
+function close(){
+	console.log("Success");
+}
