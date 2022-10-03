@@ -11,3 +11,11 @@ function init(){
 function reset(){
 	resetColor();
 }
+
+function error(){
+	log.error();
+}
+
+function close(){
+	console.log("Success");
+}

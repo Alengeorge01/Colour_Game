@@ -43,6 +43,18 @@ function createbuttons(){
 	}
 }
 
+function closebuttons(){
+	for(var i = 0; i < modeButton.length; i++) {
+		modeButton[i].addEventListener("click", function() {
+			modeButton[0].classList.remove("selected");
+			modeButton[1].classList.remove("selected");
+			this.classList.add("selected");	
+			this.textContent === "Easy" ?	numSquares = 3 : numSquares = 6;
+			reset();
+		});
+	}
+}
+
 function setupsquare(){
 	for(var i = 0; i < squares.length; i++){
 
@@ -82,7 +94,10 @@ function resetColor(){
 	}
 	h1.style.backgroundColor = "steelblue";
 	h2.style.backgroundColor = "steelblue";
+}
 
+function triggerReset(){
+	reset();
 }
 
 resetColor.addEventListener("click", function(){
@@ -119,3 +134,10 @@ function randomColor() {
 	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
+function generateRandomColor() {
+
+	var r = Math.floor(Math.random() * 256);
+	var g = Math.floor(Math.random() * 256);
+	var b = Math.floor(Math.random() * 256);
+	return "rgb(" + r + ", " + g + ", " + b + ")";
+}
