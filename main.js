@@ -5,5 +5,17 @@ function init(){
 	
 	setupbuttons();
 	setupsquare();
-	resetf();
+	resetColor();
+}
+
+function reset(){
+	resetColor();
+}
+
+function error(){
+	log.error();
+}
+
+function close(){
+	console.log("Success");
 }
