@@ -53,6 +53,13 @@ h4{
 	color: "#232323";
 }
 
+#stripe-container{
+	background: black;
+	height: 20px;
+	text-align: center;
+	color: "#232323";
+}
+
 .selected{
 	color: white;
 	background: steelblue; 
